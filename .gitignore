@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Virtual environment
+spotify_etl_env/
+
+# Environment variables
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Dagster
+dagster.yaml
