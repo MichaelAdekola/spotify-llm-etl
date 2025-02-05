@@ -19,11 +19,11 @@ graph TD;
 
 ## **🛠️ Technologies Used**
 
-**Python 3.10** – Core programming language
-**Spotify API** – Data source
-**Pandas** – Data processing
-**SQLite** – Database storage
-**Streamlit** – Data visualization
+- **Python 3.10** – Core programming language
+- **Spotify API** – Data source
+- **Pandas** – Data processing
+- **SQLite** – Database storage
+- **Streamlit** – Data visualization
 
 ---
 
@@ -35,14 +35,15 @@ The pipeline fetches the last **50 played songs** using Spotify's \\ endpoint.
 
 🔹 **Key considerations:**
 
-Uses **OAuth2 authentication** to access user data.
-Handles **pagination** to fetch up to **10,000 songs**.
-Saves data in a structured format (JSON → DataFrame).
+- Uses **OAuth2 authentication** to access user data.
+- Handles **pagination** to fetch up to **10,000 songs**.
+- Saves data in a structured format (JSON → DataFrame).
 
 ✅ **Extract Code (fetch\_recent\_tracks.py):**
-python
+```python
 spotify_data = SpotifyData()
 df = spotify_data.get_recently_played(limit=50)
+```
 ---
 
 ## **🔄 2️⃣ Transform Phase**
@@ -53,14 +54,15 @@ The pipeline **transforms** the raw JSON data into a structured Pandas **DataFra
 
 🔹 **Transformations performed:**
 
-Extracts **track name, artist, album, and timestamp**.
-Removes **duplicate records** (same track played multiple times).
-Ensures **timestamps are in UTC format**.
+- Extracts **track name, artist, album, and timestamp**.
+- Removes **duplicate records** (same track played multiple times).
+- Ensures **timestamps are in UTC format**.
 
 ✅ **Transform Code (spotify\_data.py):**
-python
+```python
 df = pd.DataFrame(track_data)
 df.drop_duplicates(subset=["track_id", "played_at"], inplace=True)
+```
 ---
 
 ## **💾 3️⃣ Load Phase**
@@ -70,7 +72,7 @@ df.drop_duplicates(subset=["track_id", "played_at"], inplace=True)
 Once the data is cleaned, it is **inserted into SQLite**.
 
 🔹 **Database Schema:**
-sql
+```sql
 CREATE TABLE tracks (
     track_id TEXT PRIMARY KEY,
     track_name TEXT,
@@ -78,8 +80,9 @@ CREATE TABLE tracks (
     album_name TEXT,
     played_at TEXT PRIMARY KEY
 );
+```
 ✅ **Load Code (spotify\_data.py):**
-python
+```python
 session = SessionLocal()
 session.merge(Track(
     id=row["track_id"],
@@ -89,6 +92,7 @@ session.merge(Track(
     played_at=row["played_at"]
 ))
 session.commit()
+```
 ---
 
 ## **📊 Next Steps**

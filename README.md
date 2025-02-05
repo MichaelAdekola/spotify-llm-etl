@@ -20,28 +20,31 @@ graph TD;
 
 ## 🛠️ Tech Stack
 
-🐍 **Python 3.10**
-🎵 **Spotify API** (OAuth2 Authentication, Data Extraction)
-📊 **Pandas** (Data Processing)
-🗄️ **SQLite** (Local Database Storage)
-📈 **Streamlit** (Data Visualization)
-🐳 **Docker** (Containerization for easy deployment)
+- 🐍 **Python 3.10**
+- 🎵 **Spotify API** (OAuth2 Authentication, Data Extraction)
+- 📊 **Pandas** (Data Processing)
+- 🗄️ **SQLite** (Local Database Storage)
+- 📈 **Streamlit** (Data Visualization)
+- 🐳 **Docker** (Containerization for easy deployment)
 
 ---
 
 ## 🚀 How to Run the Project
 
 ### 1️⃣ Clone the Repository 🛠️
-bash
+```bash
 git clone https://github.com/YOUR_GITHUB_USERNAME/spotify-llm-etl.git
 cd spotify-llm-etl
+```
 ### 2️⃣ Set Up a Virtual Environment 🏗️
-bash
+```bash
 python3 -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate
+```
 ### 3️⃣ Install Dependencies 📦
-bash
+```bash
 pip install -r requirements.txt
+```
 ### 4️⃣ Set Up Your Spotify API Credentials 🔑
 
 1. Go to [Spotify Developer Dashboard](https://developer.spotify.com/dashboard)
@@ -53,36 +56,40 @@ pip install -r requirements.txt
    SPOTIFY_CLIENT_SECRET=your_client_secret
    
 ### 5️⃣ Run the ETL Pipeline to Fetch Data ⏳
-bash
+```bash
 PYTHONPATH=$(pwd) python spotify_pipeline/pipelines/fetch_recent_tracks.py
-✅ **This will fetch recent tracks and store them in **``**.**
+```
+- ✅ **This will fetch recent tracks and store them in **``**.**
 
 ### 6️⃣ Run the Streamlit Dashboard 🎨
-bash
+```bash
 streamlit run spotify_pipeline/visualization/streamlit_app.py
-✅ **Opens an interactive web dashboard to explore the data.**
+```
+- ✅ **Opens an interactive web dashboard to explore the data.**
 
 ---
 
 ## 🐳 Running with Docker
 
 ### 1️⃣ Build the Docker Image 🏗️
-bash
+```bash
 docker build -t spotify-etl .
+```
 ### 2️⃣ Run the Docker Container 🚀
-bash
+```bash
 docker run -p 8501:8501 spotify-etl
-✅ **This will start the ETL pipeline and Streamlit dashboard inside a container.**
+```
+- ✅ **This will start the ETL pipeline and Streamlit dashboard inside a container.**
 
 ---
 
 ## 📊 Features & Data Insights
 
-🎧 **Fetch Recently Played Tracks** (Spotify API)
-🗃️ **Store & Process Data** (SQLite + Pandas)
-🔍 **Data Cleaning & Transformation**
-📊 **Basic Listening Trends Analysis**
-🎨 **Visualize Data using Streamlit**
+- 🎧 **Fetch Recently Played Tracks** (Spotify API)
+- 🗃️ **Store & Process Data** (SQLite + Pandas)
+- 🔍 **Data Cleaning & Transformation**
+- 📊 **Basic Listening Trends Analysis**
+- 🎨 **Visualize Data using Streamlit**
 
 ---
 
