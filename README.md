@@ -59,13 +59,13 @@ pip install -r requirements.txt
 ```bash
 PYTHONPATH=$(pwd) python spotify_pipeline/pipelines/fetch_recent_tracks.py
 ```
-- ✅ **This will fetch recent tracks and store them in **``**.**
+✅ **This will fetch recent tracks and store them in the database.**
 
 ### 6️⃣ Run the Streamlit Dashboard 🎨
 ```bash
 streamlit run spotify_pipeline/visualization/streamlit_app.py
 ```
-- ✅ **Opens an interactive web dashboard to explore the data.**
+✅ **Opens an interactive web dashboard to explore the data.**
 
 ---
 
@@ -79,7 +79,7 @@ docker build -t spotify-etl .
 ```bash
 docker run -p 8501:8501 spotify-etl
 ```
-- ✅ **This will start the ETL pipeline and Streamlit dashboard inside a container.**
+✅ **This will start the ETL pipeline and Streamlit dashboard inside a container.**
 
 ---
 
@@ -95,9 +95,9 @@ docker run -p 8501:8501 spotify-etl
 
 ## 🛠️ Future Improvements
 
-🔹 **Migrate to PostgreSQL for cloud storage**
-🔹 **Extend ETL with LLM-based sentiment analysis**
-🔹 **Deploy fully to AWS for cloud-based analytics**
+- 🔹 **Migrate to PostgreSQL for cloud storage**
+- 🔹 **Extend ETL with LLM-based sentiment analysis**
+- 🔹 **Deploy fully to AWS for cloud-based analytics**
 
 ---
 

@@ -97,10 +97,10 @@ session.commit()
 
 ## **📊 Next Steps**
 
-✅ **Streamlit Dashboard** for visualizing user listening habits.
-✅ **Dockerization** for portability.
-🔹 **Move to PostgreSQL** for scalable storage.
-🔹 **Integrate AI-based music recommendations.**
+- ✅ **Streamlit Dashboard** for visualizing user listening habits.
+- ✅ **Dockerization** for portability.
+- ✅ **Move to PostgreSQL** for scalable storage.
+- ✅ **Integrate AI-based music recommendations.**
 
 ---
 
