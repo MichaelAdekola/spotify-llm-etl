@@ -7,12 +7,14 @@ The **Spotify ETL Pipeline** extracts, transforms, and loads recently played tra
 ---
 
 ## **⚙️ ETL Workflow**
-mermaid
+
+```mermaid
 graph TD;
     A[Spotify API] -->|Extract| B[Fetch Recently Played Tracks];
     B -->|Transform| C[Clean & Format Data];
     C -->|Load| D[Store Data in SQLite];
     D -->|Analyze| E[Streamlit Dashboard];
+```    
 ---
 
 ## **🛠️ Technologies Used**

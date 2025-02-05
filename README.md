@@ -4,22 +4,18 @@
 
 This project is an **end-to-end ETL (Extract, Transform, Load) pipeline** that fetches a user's **recently played tracks from Spotify**, processes the data, and stores it in a **SQLite database**. The project also includes **data analysis using Streamlit** to visualize listening trends.
 
-### 🎯 Goals
-
-✅ **Demonstrate Data Engineering (DE) skills** by building an ETL pipeline.
-✅ **Showcase local analytics using Streamlit** instead of cloud deployment.
-✅ **Package the project in a Docker container** for portability.
-✅ **Reserve AWS for a larger AI/ML-focused project.**
 
 ---
 
 ## ⚙️ Project Architecture
-mermaid
+
+```mermaid
 graph TD;
     A[Spotify API] -->|Extract| B[ETL Pipeline];
     B -->|Transform| C[Cleaned Data];
     C -->|Load| D[SQLite Database];
     D -->|Analyze| E[Streamlit Dashboard];
+```
 ---
 
 ## 🛠️ Tech Stack
