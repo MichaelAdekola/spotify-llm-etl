@@ -12,9 +12,11 @@ Before running Streamlit, ensure that the required dependencies are installed:
 ```bash
 pip install -r requirements.txt
 ```
-### 2️⃣ Run the Dashboardbash
-```streamlit run spotify_pipeline/visualization/streamlit_app.py✅ This will start a local web server and open the dashboard in your browser at http://localhost:8501
+### 2️⃣ Run the Dashboard
+```bash
+streamlit run spotify_pipeline/visualization/streamlit_app.py
 ```
+✅ This will start a local web server and open the dashboard in your browser at http://localhost:8501
 ---
 
 ## 📊 Available Visualizations
